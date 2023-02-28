@@ -2,7 +2,7 @@
 https://leetcode.com/problems/add-two-numbers/
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
-Let's try the Brute Force Method, get the numbers value from each linked list and  add them and from the addition result create a new linked list.
+Let's try a simple Method, get the numbers value from each linked list and add them and from the addition result create a new linked list.If we could calculate the number value while etracting each digit from the linked list we could save some space.
 # Approach
 <!-- Describe your approach to solving the problem. -->
 1. first go through each linked list and calculate the value on the go, for example for linked list -> **4-9-1 => our for loop will calulate the value of the number as  4 * 1 (1 st loop) + 9 * 10 (2 nd loop) + 1 * 100 (3 rd loop)** , so value of number in linked list is 194.Below Function is used to calculate number value as described above.
