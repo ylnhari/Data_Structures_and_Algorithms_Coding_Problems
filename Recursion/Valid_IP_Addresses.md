@@ -1,6 +1,3 @@
-# Problem
-https://leetcode.com/problems/restore-ip-addresses/description/
-
 # Intuition
 The problem requires generating all possible valid IP addresses from a given string. An IP address consists of four blocks separated by dots, and each block is a number between 0 and 255. The challenge is to split the string into these blocks while ensuring each block is valid.
 
@@ -9,6 +6,36 @@ We use a backtracking approach to explore all possible ways to split the string 
 
 # Complexity
 - **Time complexity:** The time complexity is $$O(3^4)$$ because each block can have at most 3 digits, and there are 4 blocks.
+    - Understanding (3^4)
+The expression (3^4) comes from the number of choices you have for each block in the IP address:
+
+        IP Address Structure: An IP address consists of exactly 4 blocks.
+        Block Length Choices: Each block can be 1, 2, or 3 characters long.
+        
+        Detailed Breakdown
+        For each of the 4 blocks, you have 3 choices for the length of the block:
+
+        First Block: You can choose a length of 1, 2, or 3 characters.
+        Second Block: Again, you can choose a length of 1, 2, or 3 characters.
+        Third Block: Similarly, you can choose a length of 1, 2, or 3 characters.
+        Fourth Block: Finally, you can choose a length of 1, 2, or 3 characters.
+        
+        Total Combinations
+        Since each block is independent of the others, you multiply the number of choices for each block:
+
+        $$[ 3 \times 3 \times 3 \times 3 = 3^4 = 81 ]$$
+
+        Why This Matters
+        This calculation shows that there are a maximum of 81 different ways to split the string into 4 blocks, each with a length between 1 and 3 characters. This is a constant number, which is why the time complexity is (O(3^4)), or simply (O(1)).
+
+        Example
+        Let’s consider a string “25525511135”:
+
+        First Block: You can choose “2”, “25”, or “255”.
+        Second Block: For each choice of the first block, you can again choose “5”, “55”, or “552”.
+        Third Block: Similarly, you can choose “5”, “55”, or “552”.
+        Fourth Block: Finally, you can choose “1”, “11”, or “111”.
+        Each choice is independent, leading to (3^4) combinations.
 - **Space complexity:** The space complexity is $$O(n)$$ due to the recursion stack and the space required to store the resulting IP addresses.
 
 # Code
